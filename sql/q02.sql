@@ -1,9 +1,10 @@
-
--- Q2: Find the total sales amount for each product category
+-- Q02: Which orders have missing amounts?
 
 SELECT
-    category,
-    SUM(quantity * unit_price) AS total_sales
+    order_id,
+    customer_id,
+    item,
+    status
 FROM orders
-GROUP BY category
-ORDER BY total_sales DESC;
+WHERE amount IS NULL
+ORDER BY order_id ASC;
