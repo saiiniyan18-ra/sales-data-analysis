@@ -1,5 +1,4 @@
--- Q02: Which orders have missing amounts?
-
+-- Q02: Find orders with missing amounts
 SELECT
     order_id,
     customer_id,
