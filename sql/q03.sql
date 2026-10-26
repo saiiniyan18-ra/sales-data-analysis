@@ -1,9 +1,11 @@
 
--- Q3: Count the number of orders in each category
-
+-- Q03: Find the five biggest completed orders
 SELECT
-    category,
-    COUNT(*) AS order_count
+    order_id,
+    customer_id,
+    item,
+    amount
 FROM orders
-GROUP BY category
-ORDER BY order_count DESC;
+WHERE status = 'completed'
+ORDER BY amount DESC, order_id ASC
+LIMIT 5;
