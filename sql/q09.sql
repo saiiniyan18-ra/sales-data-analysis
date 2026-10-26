@@ -1,4 +1,3 @@
-
 -- Q09: Combine order, customer, and sales representative details
 SELECT
     o.order_id,
@@ -15,5 +14,5 @@ FROM orders AS o
 JOIN customers AS c
     ON o.customer_id = c.customer_id
 JOIN reps AS r
-    ON o.rep_id = r.rep_id
+    ON c.rep_id = r.rep_id
 ORDER BY o.order_id ASC;
