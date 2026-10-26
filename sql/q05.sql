@@ -1,9 +1,10 @@
 
--- Q5: Find the average order value for each customer
-
+-- Q05: Calculate headline KPIs for completed orders
 SELECT
-    customer_id,
-    ROUND(AVG(quantity * unit_price), 2) AS average_order_value
+    COUNT(*) AS total_orders,
+    SUM(amount) AS total_revenue,
+    ROUND(AVG(amount), 2) AS avg_order_value,
+    MIN(amount) AS min_order_value,
+    MAX(amount) AS max_order_value
 FROM orders
-GROUP BY customer_id
-ORDER BY average_order_value DESC;
+WHERE status = 'completed';
